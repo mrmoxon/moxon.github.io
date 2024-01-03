@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .profile {
+    margin-right: 20px;
+  }
+  
+  .profile-picture {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+  }
+  
+  .content-links a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .bio {
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  /* Additional styling can be added here */
+  
