@@ -2,24 +2,12 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden; /* Prevents scrollbars */
 }
 
-#pongCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
+canvas {
+    position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure canvas is in the background */
+    /* background-color: black; Set canvas background to black */
 }
-
-.content {
-    position: relative;
-    z-index: 1; /* Ensure content is above the game */
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-}
-
-/* Add more styling for content and responsive design */
