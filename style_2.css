@@ -1,0 +1,14 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #f0f0f0; /* Light gray background to see the red dots */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff; /* White background for the canvas */
+}
