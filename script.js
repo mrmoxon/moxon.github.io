@@ -16,21 +16,6 @@ function setCanvasSize() {
 window.onload = setCanvasSize;
 window.onresize = setCanvasSize;
 
-// function createDot() {
-//     const dot = document.createElement('div');
-//     dot.classList.add('dot');
-//     document.body.appendChild(dot);
-
-//     const x = Math.random() * window.innerWidth;
-//     const y = Math.random() * window.innerHeight;
-//     const dx = (Math.random() - 0.5) * 4; // Speed and direction
-//     const dy = (Math.random() - 0.5) * 4; // Speed and direction
-
-//     const newDot = { dot, x, y, dx, dy };
-//     dots.push(newDot); // Add the new dot to the array
-//     moveDot(newDot);
-// }
-
 function createDot() {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -43,7 +28,7 @@ function createDot() {
 
     const newDot = { dot, x, y, dx, dy };
     dots.push(newDot); // Add the new dot to the array
-    // Do not call moveDot here; it will be called in the animation loop
+    moveDot(newDot);
 }
 
 // function drawLines() {
@@ -169,33 +154,13 @@ function moveDot(dotObj) {
     // animate()
 }
 
-function animate() {
-    // Clear the canvas for fresh drawing
-    const canvas = document.getElementById('line-canvas');
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Move and draw each dot
-    dots.forEach(dot => {
-        moveDot(dot);
-    });
-
-    // Draw lines and Voronoi diagram
-    drawLines();
-    drawVoronoi();
-
-    // Continue the animation
-    requestAnimationFrame(animate);
-}
-
-
 // This new animate function replaces the requestAnimationFrame call in moveDot
-// function animate() {
-//     dots.forEach(moveDot); // Move each dot
-//     drawLines(); // Draw lines between dots
-//     drawVoronoi(); // Draw the Voronoi diagram
-//     requestAnimationFrame(animate); // Schedule the next frame
-// }
+function animate() {
+    dots.forEach(moveDot); // Move each dot
+    drawLines(); // Draw lines between dots
+    drawVoronoi(); // Draw the Voronoi diagram
+    requestAnimationFrame(animate); // Schedule the next frame
+}
 
 // // Start the animation loop
 // animate();
